@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Background Full Layar */
+.bg-image{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* Efek gelap agar tulisan terbaca */
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+.header{
+    height:60px;
+    background:rgba(0,0,0,0.7);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 20px;
+}
+
+.logo{
+    color:gold;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.balance{
+    padding:12px;
+    background:rgba(0,0,0,0.5);
+}
+
+.banner{
+    height:180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:48px;
+    font-weight:bold;
+}
+
+.notice{
+    background:rgba(212,175,55,0.9);
+    text-align:center;
+    padding:12px;
+}
+
+.menu{
+    display:flex;
+    justify-content:space-around;
+    padding:15px;
+    background:rgba(0,0,0,0.5);
+}
+
+.jackpot{
+    text-align:center;
+    margin:20px;
+}
+
+.jackpot h2{
+    color:gold;
+}
+
+.amount{
+    font-size:42px;
+    font-weight:bold;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    padding:15px;
+    margin-bottom:90px;
+}
+
+.card{
+    background:rgba(0,0,0,0.75);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.thumb{
+    height:120px;
+    background:linear-gradient(45deg,#555,gold);
+}
+
+.info{
+    padding:10px;
+}
+
+.rtp{
+    color:#4cff6c;
+}
+
+.bottom{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.85);
+    display:flex;
+    justify-content:space-around;
+    padding:15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Ganti nama file jika perlu -->
+<img src="api.jpg" class="bg-image">
+
+<div class="overlay"></div>
+
+<div class="header">
+    <h2>☰</h2>
+    <div class="logo">PIKUGACOR420</div>
+    <h2>👤</h2>
+</div>
+
+<div class="balance">
+💰 IDR 245.200
+</div>
+
+<div class="banner">
+10K BONUS
+</div>
+
+<div class="notice">
+wh***yp Berhasil Withdraw Rp 104.563.000
+</div>
+
+<div class="menu">
+<div>⚽ FIFA</div>
+<div>🎰 Slots</div>
+<div>🎥 Live</div>
+<div>🏆 Sport</div>
+</div>
+
+<div class="jackpot">
+<h2>JACKPOT</h2>
+<div class="amount" id="jackpot">
+35.887.829.637
+</div>
+</div>
+
+<div class="games">
+
+<div class="card">
+<div class="thumb"></div>
+<div class="info">
+<h3>Fortune Gems</h3>
+<div class="rtp">RTP 82%</div>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb"></div>
+<div class="info">
+<h3>Storm Queen</h3>
+<div class="rtp">RTP 99%</div>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb"></div>
+<div class="info">
+<h3>Golden Temple</h3>
+<div class="rtp">RTP 85%</div>
+</div>
+</div>
+
+<div class="card">
+<div class="thumb"></div>
+<div class="info">
+<h3>Dragon Riches</h3>
+<div class="rtp">RTP 97%</div>
+</div>
+</div>
+
+</div>
+
+<div class="bottom">
+<div>🏠 Home</div>
+<div>🎁 Promo</div>
+<div>💰 Dana</div>
+<div>💬 Chat</div>
+</div>
+
+<script>
+let jackpot = 35887829637;
+
+setInterval(() => {
+    jackpot += Math.floor(Math.random() * 10000);
+    document.getElementById("jackpot").innerHTML =
+    jackpot.toLocaleString("id-ID");
+}, 1000);
+</script>
+
+</body>
+</html>
